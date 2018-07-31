@@ -1,0 +1,21 @@
+version: '2'
+services:
+  express:
+      build: .
+      depends_on:
+        - cassandra
+      environment:
+        - NODE_ENV=production
+      ports:
+        - "8000:8000"
+      command: node index.js
+      extra_hosts:
+        - "mongo.computenext.com:172.16.1.121"
+        - "billing.computenext.com:172.16.1.121"
+  cassandra:
+      image: cassandra
+      ports:
+        - "9042:9042"
+      restart: always
+      
+
