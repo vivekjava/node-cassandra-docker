@@ -15,13 +15,9 @@ How to create separate network :
     3. Using docker compose applying the network to the containers.
 
        * Please refer the docker-compose.yml file. 
-
        * From the out put you  can verify the network
-
          * using this command : docker network inspect ls
-
          * From the output the container name will ends with your network name Like 
-
-           * >  a331782f5e7b        nodecassandradocker_serve     bridge              local
-             > ec58cd80a9b4        none                          		   null                local
-             > 7ddd05de3047        serve                                          bridge              local
+           1. a331782f5e7b        **nodecassandradocker_serve**     bridge              local
+           2. ec58cd80a9b4        none                          		   null                local
+           3. 7ddd05de3047        **serve**                                          bridge              local
