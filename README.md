@@ -8,62 +8,16 @@ How to create separate network :
 
     ​        $ docker network inspect bridge
 
-	2.  Create a new network
+    2. Create a new network
 
-     ​	$ docker network create --driver bridge service
+      ​	$ docker network create --driver bridge service
 
-	3.  Using docker compose applying the network to the containers.
+    3. Using docker compose applying the network to the containers.
 
-     `
-
-     version: '2'
-
-     services:
-
-       express:
-
-     ​      build: .
-
-     ​      depends_on:
-
-     ​        \- cassandra
-
-     ​      environment:
-
-     ​        \- NODE_ENV=production
-
-     ​      ports:
-
-     ​        \- "8000:8000"
-
-     ​      links: 
-
-     ​        \- cassandra
-
-     ​      networks: 
-
-     ​        \- service
-
-     ​      command: node index.js
-
-       cassandra:
-
-     ​      image: cassandra
-
-     ​      ports:
-
-     ​        \- "9042:9042"
-
-     ​      networks:
-
-     ​        \- service
-
-     ​      restart: always
-
-     networks:
-
-       service:
-
-     ​    driver: "bridge"
-
-     `
+       * Please refer the docker-compose.yml file. 
+       * From the out put you  can verify the network
+         * using this command : docker network inspect ls
+         * From the output the container name will ends with your network name Like 
+           *  a331782f5e7b        nodecassandradocker_serve     bridge              local
+             ec58cd80a9b4        none                          		   null                local
+             7ddd05de3047        serve                                          bridge              local
