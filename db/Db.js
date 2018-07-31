@@ -6,15 +6,11 @@ function getRecords(query,callback){
     query = 'select key from '+query;
     client.execute(query,function(err,result){
         if(err){
-            next({"error":"db error"});
+            return callback(err);
         }
         console.log("result Found");
         return callback(null,result);
     });
-}
-
-function createRecord(){
-
 }
 
 exports.getRecords = getRecords ;

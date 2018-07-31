@@ -11,6 +11,7 @@
     "api",
     "express"
   ],
+  "repository":"https://github.com/vivekjava/node-cassandra-docker.git",
   "author": "vivekjava",
   "license": "ISC",
   "dependencies": {
