@@ -21,3 +21,22 @@ How to create separate network :
            1. a331782f5e7b        **nodecassandradocker_serve**     bridge              local
            2. ec58cd80a9b4        none                          		   null                local
            3. 7ddd05de3047        **serve**                                          bridge              local
+
+### **To run this program :** 
+
+​      Step 1 : create your network with the name of  "service"
+
+​      Step 2 : replace or comment the registry configuration line from Dockerfile 
+
+​                    " RUN npm set registry http://192.168.1.160:4873/"
+
+​       Step  3 : run the below command
+
+​			$ docker-compose up --build
+
+​        Step 4 : make the rest call  GET : ip:8000/account/vivek
+
+ 
+
+ 
+
